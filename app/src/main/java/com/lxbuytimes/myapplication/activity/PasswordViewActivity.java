@@ -26,7 +26,6 @@ public class PasswordViewActivity extends AppCompatActivity {
         pwd.setPasswordListener(new IPasswordView.PasswordListener() {
             @Override
             public void passwordChange(View view, String changeText) {
-
             }
 
             @Override
@@ -36,7 +35,6 @@ public class PasswordViewActivity extends AppCompatActivity {
 
             @Override
             public void keyEnterPress(View view, String password, boolean isComplete) {
-
             }
         });
     }
