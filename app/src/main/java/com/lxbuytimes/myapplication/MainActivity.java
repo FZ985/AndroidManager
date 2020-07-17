@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.lxbuytimes.myapplication.activity.PasswordViewActivity;
+import com.lxbuytimes.myapplication.activity.PasswordViewActivity2;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,5 +19,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void passwordView(View view) {
         startActivity(new Intent(this, PasswordViewActivity.class));
+    }
+    public void passwordView2(View view) {
+        startActivity(new Intent(this, PasswordViewActivity2.class));
     }
 }
