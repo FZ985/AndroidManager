@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="IPasswordView">
+        <attr name="pwdMode" format="enum">
+            <enum name="underline" value="0" />
+            <enum name="rect" value="1" />
+            <enum name="space" value="2" />
+        </attr>
+        <attr name="pwdLength" format="integer" />
+        <attr name="pwdSpace" format="dimension" />
+        <attr name="pwdRectColor" format="color" />
+        <attr name="pwdRectBorderColor" format="color" />
+        <attr name="pwdRectBorderWidth" format="dimension" />
+        <attr name="pwdRadiusx" format="dimension" />
+        <attr name="pwdRadiusy" format="dimension" />
+        <attr name="pwdCursorEnable" format="boolean" />
+        <attr name="pwdCursorColor" format="color" />
+        <attr name="pwdCursorWidth" format="dimension" />
+        <attr name="pwdCursorHeight" format="dimension" />
+        <attr name="pwdCursorFlashTime" format="integer" />
+        <attr name="pwdTextColor" format="color" />
+        <attr name="pwdTextBold" format="boolean" />
+        <attr name="pwdCipherEnable" format="boolean" />
+    </declare-styleable>
+</resources>
