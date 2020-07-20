@@ -387,12 +387,19 @@ public class IPasswordView2 extends AppCompatEditText {
                 if (s.length() > passwordLength)
                     return;
                 if (count == 0) {
-                    delete();
+                    String deleteText = delete();
+                    if (passwordListener != null && !TextUtils.isEmpty(deleteText)) {
+                        passwordListener.passwordChange(IPasswordView2.this, deleteText);
+                    }
                 }
                 if (count == 1) {
-                    String addText = add(s.toString().substring(s.length() - 1, s.length()) + "");
-                    if (passwordListener != null && !TextUtils.isEmpty(addText)) {
-                        passwordListener.passwordChange(IPasswordView2.this, addText);
+                    String changedText = s.toString().substring(s.length() - 1, s.length()) + "";
+                    if (passwordListener != null && !TextUtils.isEmpty(changedText)) {
+                        passwordListener.passwordChange(IPasswordView2.this, changedText);
+                    }
+                    String addText = add(changedText);
+                    if (passwordListener != null) {
+                        passwordListener.passwordCompleteFinish(IPasswordView2.this, getPassword(), isInputComplete);
                     }
                     postInvalidate();
                 }
@@ -458,13 +465,14 @@ public class IPasswordView2 extends AppCompatEditText {
          * @param view
          * @param changeText 输入/删除的字符
          */
-        void passwordChange(View view, String changeText);
+        void passwordChange(IPasswordView2 view, String changeText);
 
         /**
          * 输入完成
          */
-        void passwordComplete(View view);
+        void passwordComplete(IPasswordView2 view);
 
+        void passwordCompleteFinish(IPasswordView2 view, String pwd, boolean isComplete);
     }
 
     @Override
