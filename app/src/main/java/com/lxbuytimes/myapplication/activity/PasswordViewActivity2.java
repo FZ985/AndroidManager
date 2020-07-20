@@ -25,15 +25,21 @@ public class PasswordViewActivity2 extends AppCompatActivity {
         setTitle("密码控件");
         pwd = findViewById(R.id.pwd);
         pwd.setPasswordListener(new IPasswordView2.PasswordListener() {
+
             @Override
-            public void passwordChange(View view, String changeText) {
+            public void passwordChange(IPasswordView2 view, String changeText) {
+
             }
 
             @Override
-            public void passwordComplete(View view) {
+            public void passwordComplete(IPasswordView2 view) {
                 Toast.makeText(PasswordViewActivity2.this, pwd.getPassword(), Toast.LENGTH_SHORT).show();
             }
 
+            @Override
+            public void passwordCompleteFinish(IPasswordView2 view, String pwd, boolean isComplete) {
+
+            }
         });
     }
 }
